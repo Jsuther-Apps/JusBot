@@ -1,15 +1,16 @@
-# JusBot
+# ⇥ Discord.JS-Coding-Tutorials ⇤
 
-What is JusBot?
+➽ Official GitHub of DashCraft on YouTube, Discord.JS Coding Tutorials v12, 
+By Poryafm12 (DashCraft)
 
-JusBot is a Discord bot created by Jsuther Gaming that has features including
+Welcome to My GitHub! I make a Branch for each episode I make on YouTube! Hopefully You guys will like it! If you want to see my playlist I have on YouTube for this Series!<br/>
+https://www.youtube.com/watch?v=gU-uNZz2O8s&list=PLCgC6Lz08u0wdLtoZznLQ40hNm_6J4XSN
 
-- Music; stream music from YouTube Spotify or Apple Music
+# How and Where I can Find the Codes?
 
-- Moderation; Ban, kick, mute, lockdown channels, etc
+First You have to click on The Branches:
+![image](https://user-images.githubusercontent.com/59381835/83589891-6241f580-a509-11ea-86a7-5e846d4089a8.png)
 
-- Fun; memes and levels
 
-- Nitro Generator; Jsuther Gaming will buy Nitro from the money he gets from people buying JusBot premium, then those premium users get a 12 hour limit for "generating" 5 Nitro codes. This way, JusBot will not be against Discord terms as this gives codes Jsuther buys instead of making random codes or using codes that are not his.
-
-More coming soon!
+Second, When you click on That Icon, You have access to each episodes code on there!
+![image](https://user-images.githubusercontent.com/59381835/83589430-8bae5180-a508-11ea-975a-ae4fee409fde.png)
