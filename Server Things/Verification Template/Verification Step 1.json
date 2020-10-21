@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "backups": [
+    {
+      "name": "Verification Step 1",
+      "message": {
+        "embeds": [
+          {
+            "title": "Click here to invite me to your server",
+            "description": "Thanks for using JusBot by Jsuther Gaming#4110 ",
+            "url": "https://discord.com/api/oauth2/authorize?client_id=763752577606615101&permissions=8&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth&scope=bot",
+            "color": 7506394,
+            "author": {
+              "name": "JusBot",
+              "icon_url": "https://media.discordapp.net/attachments/765972808379269151/766305847500079154/JusBot_Bacon.jpg"
+            }
+          },
+          {
+            "title": "4 Step Verification (Step 1)",
+            "description": "```fix\nPlease react with ✅to start verification\n```\n`or`\n\n```fix\nReact with ❌to skip\n```",
+            "color": 7506394,
+            "author": {
+              "name": "JusBot",
+              "icon_url": "https://media.discordapp.net/attachments/765972808379269151/766305847500079154/JusBot_Bacon.jpg"
+            },
+            "footer": {
+              "text": "After hitting ✅, go to #🍰step-2🍰.If clicking ❌, have fun!"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
