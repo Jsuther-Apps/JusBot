@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("guildMemberAdd", member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === '🍕welcome-cya🍕')
     welcomeChannel.send (`Welcome! ${member}`)
 })
 
