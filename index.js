@@ -1,11 +1,10 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
-const mongoose = require('mongoose');
 
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("guildMemberAdd", member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === '🍕welcome-cya🍕')
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
     welcomeChannel.send (`Welcome! ${member}`)
 })
 
@@ -46,11 +45,5 @@ bot.on("message", async message => {
     if(commandfile) commandfile.run(bot,message,args)
 
 })
-
-mongoose.connect(botsettings.mongoURI,
-    { useNewUrlParser: true, useUnifiedTopology: true },
-    (error) => error
-      ? console.log('Failed to connect to database')
-      : console.log('Connected to database'));
 
 bot.login(botsettings.token);

@@ -14,8 +14,8 @@ module.exports.run = async (bot, message, args) => {
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here is the Avaible Commands to use:`)
-            .setDescription('```afk | meme | ping | hi | hello || Music Commands soon. Admins please use (prefix)ahelp```')
-            .addFields({ name: 'Prefix', value: '```Default: js! || Prefix change not available```', inline: true})
+            .setDescription('```hi | hello | mute | unmute | addrole | removerole | embed | kick | ban```')
+            .addFields({ name: 'Prefix', value: '```?```', inline: true})
             .setColor('#00FFF3')
             
         message.channel.send(embed);
@@ -47,5 +47,5 @@ module.exports.config = {
     description: "",
     usage: "?help",
     accessableby: "Members",
-    aliases: ['cmds']
+    aliases: []
 }
