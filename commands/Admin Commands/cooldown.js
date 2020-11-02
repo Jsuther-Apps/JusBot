@@ -18,6 +18,6 @@ module.exports.config = {
     name: "cooldown",
     description: "a Simple test of the Cooldown Command.",
     usage: "?cooldown",
-    accessableby: "Members",
+    accessableby: "Admins",
     aliases: []
 }

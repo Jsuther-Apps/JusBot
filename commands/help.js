@@ -13,9 +13,11 @@ module.exports.run = async (bot, message, args) => {
     //Normal usage of (prefix)help without any args. (Shows all of the commands and you should set the commands yourself)
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
+            .setTitle(`Click here for all commands`)
+            .setURL(`https://github.com/Jsuther-Apps/JusBot/tree/main/commands`)
             .setAuthor(`Here is the Avaible Commands to use:`)
-            .setDescription('```hi | hello | mute | unmute | addrole | removerole | embed | kick | ban```')
-            .addFields({ name: 'Prefix', value: '```?```', inline: true})
+            .setDescription('```hi | hello | mute | unmute | addrole | removerole | embed | kick | ban | invite ```')
+            .addFields({ name: 'Prefix', value: '```js!```', inline: true})
             .setColor('#00FFF3')
             
         message.channel.send(embed);

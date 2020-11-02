@@ -2,14 +2,14 @@ module.exports.run = async (bot, message, args) => {
     let epicRole = message.guild.roles.cache.get('ROLE_ID_HERE');
     const member = message.mentions.members.first();
 
-    member.roles.add(epicRole);
-    message.channel.send('Role Added')
+    member.roles.remove(epicRole);
+    message.channel.send('Role Removed')
 }
 
 module.exports.config = {
-    name: "addrole",
-    description: "",
-    usage: "?addrole",
+    name: "leaveRank",
+    description: "Leave a rank by it's role ID",
+    usage: "?leaveRank",
     accessableby: "Members",
     aliases: []
 }

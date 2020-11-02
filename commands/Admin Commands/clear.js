@@ -5,11 +5,11 @@ module.exports.run = async (bot, message, args) => {
     }
 
     if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-        return message.reply("Missing Permissions!").then(m => m.delete(5000));
+        return message.reply("Error: Missing Permissions `MANAGE_MESSAGES`").then(m => m.delete(5000));
     }
 
     if (isNaN(args[0]) || parseInt(args[0]) <= 0) {
-        return message.reply("This is not a number").then(m => m.delete(5000));
+        return message.reply("Error: This is not a number").then(m => m.delete(5000));
     }
 
     let deleteAmount;
@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
     }
 
     message.channel.bulkDelete(deleteAmount, true)
-    .catch(err => message.reply(`Something went wrong... ${err}`));
+    .catch(err => message.reply(`An unknown error occured${err}`));
 
 }
 
@@ -28,6 +28,6 @@ module.exports.config = {
     name: "clear",
     description: "clears message",
     usage: "?clear",
-    accessableby: "Members",
+    accessableby: "Admins",
     aliases: ['c', 'purge']
 }
