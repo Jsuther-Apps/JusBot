@@ -12,9 +12,9 @@ module.exports.run = async (bot, message, args) => {
 
 
 module.exports.config = {
-       name:"Cmd name",
-    description:"Cmd description",
-    usage:"?Cmd",
+       name:"invite",
+    description:"Generate invite link for JusBot",
+    usage:"?invite",
     accessableby:"Who can use",
-    aliases:["other ways to execute this command"]
+    aliases:["inv"]
     }

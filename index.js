@@ -1,7 +1,10 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
+const mongoose = require('mongoose');
 
 const bot = new Discord.Client({disableEveryone: true});
+
+mongoose.connect('mongodb+srv://JsutherGaming:JsutherGaming90@jsuthergamingbots.wphg5.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true})
 
 require("./util/eventHandler")(bot)
 
