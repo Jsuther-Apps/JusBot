@@ -16,7 +16,8 @@ module.exports.run = async (bot, message, args) => {
             .setTitle(`Click here for all commands`)
             .setURL(`https://github.com/Jsuther-Apps/JusBot/tree/main/commands`)
             .setAuthor(`Here is the Avaible Commands to use:`)
-            .setDescription('```hi | hello | mute | unmute | addrole | removerole | embed | kick | ban | invite ```')
+            .setDescription('```hi | hello | addrole | remove role | meme | invite```')
+            .addField('`Note: Use js!help <COMMAND_NAME> for help on that command`')
             .addFields({ name: 'Prefix', value: '```js!```', inline: true})
             .setColor('#00FFF3')
             

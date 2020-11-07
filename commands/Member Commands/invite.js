@@ -6,6 +6,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor('BLUE')
     .addField('Please click this link to add JusBot to your server.')
     .addField('https://discord.com/api/oauth2/authorize?client_id=763752577606615101&permissions=8&redirect_uri=https%3A%2F%2Fwww.discord.gg%2FhJPKQJE&response_type=code&scope=bot%20guilds.join')
+    .setThumbnail('https://non-pedos-use.semishot.com/s6KGjfS2_lU')
 
     message.channel.send(userEmbed);
     }
