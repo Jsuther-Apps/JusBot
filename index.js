@@ -1,121 +1,54 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
-const mongoose = require('mongoose');
-
+const client = new Discord.Client({
+    partials: ['MESSAGE', 'CHANNEL', 'REACTION']
+});
 const bot = new Discord.Client({disableEveryone: true});
 
-mongoose.connect('mongodb+srv://JsutherGaming:JsutherGaming90@jsuthergamingbots.wphg5.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true})
+const {
+    loadCommands
+} = require('./util/loadCommands');
+const mongoose = require('mongoose');
+//Make sure to require this model in your message event or index.js if you use message event on there. in this case im going to require it here
+const prefix = require('./models/prefix');
 
-require("./util/eventHandler")(bot)
-
-const fs = require("fs");
-bot.commands = new Discord.Collection();
-bot.aliases = new Discord.Collection();
-
-fs.readdir("./commands/", (err, files) => {
-
-    if(err) console.log(err)
-
-    let jsfile = files.filter(f => f.split(".").pop() === "js") 
-    if(jsfile.length <= 0) {
-         return console.log("[LOGS] Couldn't Find Commands!");
-    }
-
-    jsfile.forEach((f, i) => {
-        let pull = require(`./commands/${f}`);
-        bot.commands.set(pull.config.name, pull);  
-        pull.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, pull.config.name)
-        });
-    });
+mongoose.connect(botsettings.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 });
+client.login(botsettings.token);
 
-fs.readdir("./commands/Admin Commands", (err, files) => {
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 
-    if(err) console.log(err)
+loadCommands(client);
+require('./util/eventHandler.js')(client)
 
-    let jsfile = files.filter(f => f.split(".").pop() === "js") 
-    if(jsfile.length <= 0) {
-         return console.log("[LOGS] Couldn't Find Commands!");
-    }
+client.on('message', async (message) => {
+    if (message.author.bot) return;
 
-    jsfile.forEach((f, i) => {
-        let pull = require(`./commands/Admin Commands/${f}`);
-        bot.commands.set(pull.config.name, pull);  
-        pull.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, pull.config.name)
-        });
+    //Getting the data from the model
+    const data = await prefix.findOne({
+        GuildID: message.guild.id
     });
-});
 
-fs.readdir("./commands/Music Commands/", (err, files) => {
+    const messageArray = message.content.split(' ');
+    const cmd = messageArray[0];
+    const args = messageArray.slice(1);
 
-    if(err) console.log(err)
+    //If there was a data, use the database prefix BUT if there is no data, use the default prefix which you have to set!
+    if(data) {
+        const prefix = data.Prefix;
 
-    let jsfile = files.filter(f => f.split(".").pop() === "js") 
-    if(jsfile.length <= 0) {
-         return console.log("[LOGS] Couldn't Find Commands!");
+        if (!message.content.startsWith(prefix)) return;
+        const commandfile = client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
+        commandfile.run(client, message, args);
+    } else if (!data) {
+        //set the default prefix here
+        const prefix = botsettings.prefix;
+        
+        if (!message.content.startsWith(prefix)) return;
+        const commandfile = client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
+        commandfile.run(client, message, args);
     }
-
-    jsfile.forEach((f, i) => {
-        let pull = require(`./commands/Music Commands/${f}`);
-        bot.commands.set(pull.config.name, pull);  
-        pull.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, pull.config.name)
-        });
-    });
-});
-
-
-
-fs.readdir("./commands/Member Commands/", (err, files) => {
-
-    if(err) console.log(err)
-
-    let jsfile = files.filter(f => f.split(".").pop() === "js") 
-    if(jsfile.length <= 0) {
-         return console.log("[LOGS] Couldn't Find Commands!");
-    }
-
-    jsfile.forEach((f, i) => {
-        let pull = require(`./commands/Member Commands/${f}`);
-        bot.commands.set(pull.config.name, pull);  
-        pull.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, pull.config.name)
-        });
-    });
-});
-
-fs.readdir("./commands/Jsuther X Commands/", (err, files) => {
-
-    if(err) console.log(err)
-
-    let jsfile = files.filter(f => f.split(".").pop() === "js") 
-    if(jsfile.length <= 0) {
-         return console.log("[LOGS] Couldn't Find Commands!");
-    }
-
-    jsfile.forEach((f, i) => {
-        let pull = require(`./commands/Jsuther X Commands/${f}`);
-        bot.commands.set(pull.config.name, pull);  
-        pull.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, pull.config.name)
-        });
-    });
-});
-
-bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
-
-    let prefix = botsettings.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = message.content.substring(message.content.indexOf(' ')+1);
-
-    if(!message.content.startsWith(prefix)) return;
-    let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
-    if(commandfile) commandfile.run(bot,message,args)
-
 })
-
-bot.login(botsettings.token);

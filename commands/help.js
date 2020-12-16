@@ -47,7 +47,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: "help",
-    description: "",
+    description: "Shows commands you can use",
     usage: "?help",
     accessableby: "Members",
     aliases: []

@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "backups": [
+    {
+      "name": "Self Roles",
+      "message": {
+        "content": "@everyone",
+        "embeds": [
+          {
+            "title": "Self Roles",
+            "description": ":white_check_mark: for : `I'm finished with self roles` (MUST HAVE AT LEAST ONE)\n:bell: for: `Announcement Pings` (We will ping you for announcements and you will be able to see those channels)\n:handshake: for: `Partner Ping` (When a partnered server or member sends there server they can ping this role and notify all people with this role)",
+            "color": 7506394,
+            "fields": [
+              {
+                "name": "What to do when finished?",
+                "value": "Please go to the rules chat and follow directions there"
+              }
+            ],
+            "author": {
+              "name": "JusBot",
+              "icon_url": "https://media.discordapp.net/attachments/772645663904890890/777020524466667590/JAWG75WGq88.png"
+            },
+            "footer": {
+              "text": "Self Roles",
+              "icon_url": "https://media.discordapp.net/attachments/772645663904890890/777020524466667590/JAWG75WGq88.png"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

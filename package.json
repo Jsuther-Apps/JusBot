@@ -1,9 +1,66 @@
 {
+  "name": "jusbot",
+  "version": "1.0.0",
+  "description": "Official Discord Bot by Jsuther Gaming",
+  "main": "index.js",
   "dependencies": {
-    "discord-player": "^3.0.0",
-    "discord.js": "^12.4.1",
+    "abort-controller": "^3.0.0",
+    "asynckit": "^0.4.0",
+    "bl": "^2.2.1",
+    "bluebird": "^3.5.1",
+    "bson": "^1.1.5",
+    "combined-stream": "^1.0.8",
+    "core-util-is": "^1.0.2",
+    "debug": "^3.1.0",
+    "delayed-stream": "^1.0.0",
+    "denque": "^1.4.1",
+    "discord.js": "^12.5.1",
+    "event-target-shim": "^5.0.1",
     "fs": "^0.0.1-security",
-    "mongoose": "^5.10.11",
-    "random-puppy": "^1.1.0"
-  }
+    "inherits": "^2.0.4",
+    "isarray": "^1.0.0",
+    "kareem": "^2.3.1",
+    "memory-pager": "^1.5.0",
+    "mime-db": "^1.44.0",
+    "mime-types": "^2.1.27",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.1",
+    "mongoose": "^5.10.3",
+    "mongoose-legacy-pluralize": "^1.0.2",
+    "mpath": "^0.7.0",
+    "mquery": "^3.2.2",
+    "ms": "^2.1.2",
+    "node-fetch": "^2.6.0",
+    "prism-media": "^1.2.2",
+    "process-nextick-args": "^2.0.1",
+    "random-puppy": "^1.1.0",
+    "readable-stream": "^2.3.7",
+    "regexp-clone": "^1.0.0",
+    "require_optional": "^1.0.1",
+    "resolve-from": "^2.0.0",
+    "safe-buffer": "^5.2.1",
+    "saslprep": "^1.0.3",
+    "semver": "^5.7.1",
+    "setimmediate": "^1.0.5",
+    "sift": "^7.0.1",
+    "sliced": "^1.0.1",
+    "sparse-bitfield": "^3.0.3",
+    "string_decoder": "^1.1.1",
+    "tweetnacl": "^1.0.3",
+    "util-deprecate": "^1.0.2",
+    "ws": "^7.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jsuther-Apps/JusBot.git"
+  },
+  "author": "Jsuther Gaming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jsuther-Apps/JusBot/issues"
+  },
+  "homepage": "https://github.com/Jsuther-Apps/JusBot#readme"
 }

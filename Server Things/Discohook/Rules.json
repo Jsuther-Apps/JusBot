@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "backups": [
+    {
+      "name": "Rules",
+      "message": {
+        "content": "@everyone",
+        "embeds": [
+          {
+            "title": "Server Rules",
+            "description": "```fix\nThese are the rules of the server. Please follow them or you will be asked to leave or be banned\n```",
+            "color": 7506394,
+            "author": {
+              "name": "JusBot",
+              "url": "https://github.com/Jsuther-Apps/JusBot",
+              "icon_url": "https://media.discordapp.net/attachments/772645663904890890/777020524466667590/JAWG75WGq88.png"
+            },
+            "footer": {
+              "text": "Jsuther Gaming Rules",
+              "icon_url": "https://media.discordapp.net/attachments/772645663904890890/777020524466667590/JAWG75WGq88.png"
+            }
+          },
+          {
+            "title": "Section 1: General Rules",
+            "description": "```\n1. No swearing in vc (Only level 15+)\n2. Swearing in chats is LIMITED\n3. No links posted ANYWHERE unless given permission and using a trusted link\n4. Arguments; Take it to DMs or get banned\n```",
+            "color": 7506394,
+            "author": {
+              "name": "JusBot",
+              "icon_url": "https://media.discordapp.net/attachments/772645663904890890/777020524466667590/JAWG75WGq88.png"
+            },
+            "footer": {
+              "text": "General Rules",
+              "icon_url": "https://media.discordapp.net/attachments/772645663904890890/777020524466667590/JAWG75WGq88.png"
+            }
+          },
+          {
+            "title": "Section 2: Voice Chats",
+            "description": "```\n1. No ear raping or sound boarding/voice changers\n2. No fighting over music bots, wait until your song is up on the Queue\n3. Any arguments, take it to a DMs voice chat\n```",
+            "color": 7506394,
+            "author": {
+              "name": "JusBot",
+              "icon_url": "https://media.discordapp.net/attachments/772645663904890890/777020524466667590/JAWG75WGq88.png"
+            },
+            "footer": {
+              "text": "Voice Chat Rules",
+              "icon_url": "https://media.discordapp.net/attachments/772645663904890890/777020524466667590/JAWG75WGq88.png"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
